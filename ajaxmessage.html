@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Meeri's Guestbook App</title>
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        footer {
+            text-align: center;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        Welcome
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/guestbook">Guestbook</a></li>
+                    <li><a href="/newmessage">New Message</a></li>
+                    <li><a href="/ajaxmessage">Ajax Message</a></li>
+                </ul>
+
+            </div>
+
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h3> Add a new message to our guestbook!</h3>
+            <form method="post" action="/ajaxmessage">
+                Username: <input type="text" id ="username" name="username" required>
+                Country: <input type="text" id ="country" name="country" required>
+                Message: <input type="text" id ="message" name="message" required>
+                <button type="button" id="button">
+                    Send
+                </button>
+            </form>
+        </div>
+
+        <div id="status"></div>
+
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+
+<script>
+    // Varmistetaan että sivu on ladattu kokonaan ennenkuin lisäillään kuuntelijoita
+    $(() => {
+    $("#button").click(() => {
+    // Poimitaan kenttien arvot data-muuttujaan
+    var data = {
+    username: $("#username").val(),
+    country: $("#country").val(),
+    message: $("#message").val()
+    };
+    // Lähetetään AJAX olio joka palauttaa vastauksensa status-kenttään
+    $.post("/ajaxmessage", data, function(response, status) {
+    $("#status").html(response);
+    }); // post
+    }); // click
+    }); // $
+    </script>
+
+
+</body>
+
+    <footer>
+        <p> Copyright Meeri Klemola </p>
+    </footer>
+
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Pam",
+        "country": "Anguilla",
+        "date": "2023-03-01T10:10:23.930Z",
+        "message": "How are you guys doing?"
+    },
+    {
+        "username": "Sofia",
+        "country": "Macau",
+        "date": "2023-03-05T14:15:10.930Z",
+        "message": "Hello world!"
+    },
+    {
+        "username": "Ashley",
+        "country": "Mauritania",
+        "date": "2023-03-06T08:06:00.930Z",
+        "message": "Greetings from Mauritania!"
+    },
+    {
+        "username": "Baxter",
+        "country": "Malta",
+        "date": "2023-03-24T23:59:59.930Z",
+        "message": "Very nice!"
+    },
+    {
+        "username": "Vickie",
+        "country": "Uganda",
+        "date": "2023-03-27T9:33:55.930Z",
+        "message": "Anyone from Africa here?"
+    }
+]

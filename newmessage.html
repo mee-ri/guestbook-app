@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Meeri's Guestbook App</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+    body {
+        padding-top: 50px;
+    }
+    footer {
+        text-align: center;
+        color: gray;
+    }
+</style>
+</head>
+
+<body class="container">
+
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+        
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        Welcome
+                    </a>
+                </div>
+        
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/guestbook">Guestbook</a></li>
+                    <li><a href="/newmessage">New Message</a></li>
+                    <li><a href="/ajaxmessage">Ajax Message</a></li>
+                </ul>
+        
+            </div>
+        
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h3> Add a new message to our guestbook!</h3>
+            <form method="post" action="/newmessage">
+                Username: <input type="text" name="username" required>
+                Country: <input type="text" name="country" required>
+                Message: <input type="text" name="message" required>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+    <footer>
+        <p> Copyright Meeri Klemola </p>
+    </footer>
+    
+</html>
